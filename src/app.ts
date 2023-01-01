@@ -17,6 +17,10 @@ app.get("/", async () => {
   );
 });
 
+app.post("/hello/:name", async (ctx) => {
+  return new Response(JSON.stringify(await ctx.request.json()));
+});
+
 app.get("/spec", async () => {
   return new Response(JSON.stringify(swagger));
 });
